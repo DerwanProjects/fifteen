@@ -1,0 +1,415 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    font-family: "Lato", sans-serif;
+}
+
+.pietnastka-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    width: 300px;
+    height: 300px;
+    list-style-type: none;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.pietnastka-grid__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.pietnastka-grid__item {
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pietnastka-grid__number {
+    background-color: teal;
+    color: #ffffff;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+.pietnastka-grid__number.jsDraggable {
+    cursor: pointer;
+}
+
+.pietnastka-grid__number img {
+    width: 100%;
+    height: auto;
+}
+
+.hovered {
+    border: 4px dotted rgba(255, 255, 255, 0.4);
+}
+
+.invisible {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+section>.container {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px 45px;
+    margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+    .cat-list {
+        justify-content: center;
+    }
+}
+
+.cat-list__item {
+    padding: 0;
+    margin: 0 23px;
+}
+
+.cat-list__item:nth-child(1) {
+    margin-left: 0;
+}
+
+@media (max-width: 991px) {
+    .cat-list__item {
+        margin: 0;
+    }
+}
+
+.cat-list__link {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Jost", sans-serif;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 400;
+    padding: 13px 27px;
+}
+
+@media (max-width: 991px) {
+    .cat-list__link {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1801px) {
+    .cat-list__link {
+        font-size: 18px;
+    }
+}
+
+.cat-list__link.is-checked {
+    background-color: #EA222D;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.projects-list {
+    gap: 34px 32px;
+    margin: 80px 0;
+}
+
+.projects-list__item {
+    border-radius: 4px;
+    width: calc(25% - 24px);
+}
+
+@media (max-width: 991px) {
+    .projects-list__item {
+        width: calc(50% - 16px);
+    }
+
+    .projects-list__item .projects-list__img-wrap:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #EA222D;
+        mix-blend-mode: darken;
+    }
+
+    .projects-list__item .projects-list__title {
+        visibility: hidden;
+    }
+
+    .projects-list__item .zoom {
+        display: flex;
+    }
+
+    .projects-list__item .projects-list__hover-data {
+        display: block;
+    }
+}
+
+.projects-list__item:hover .projects-list__img-wrap:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #EA222D;
+    mix-blend-mode: darken;
+}
+
+.projects-list__item:hover .projects-list__title {
+    visibility: hidden;
+}
+
+.projects-list__item:hover .zoom {
+    display: flex;
+}
+
+.projects-list__item:hover .projects-list__hover-data {
+    display: block;
+}
+
+.projects-list__img {
+    border-radius: 4px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+
+@media (min-width: 1801px) {
+    .projects-list__img {
+        height: 265px;
+    }
+}
+
+.projects-list__img-wrap {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.projects-list__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 14px 0;
+    padding: 0 20px;
+}
+
+@media (min-width: 1801px) {
+    .projects-list__title {
+        font-size: 20px;
+    }
+}
+
+.projects-list__hover-data {
+    display: none;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 25px;
+}
+
+.projects-list__hover-name {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+@media (min-width: 1801px) {
+    .projects-list__hover-name {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1801px) {
+    .projects-list__hover-name {
+        margin-bottom: 8px;
+    }
+}
+
+.projects-list__hover-link {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+    text-align: right;
+}
+
+@media (min-width: 1801px) {
+    .projects-list__hover-link {
+        font-size: 14px;
+    }
+}
